@@ -17,7 +17,7 @@ The URL hash follows the slide (`index.html#3`), so a refresh keeps your place.
 ## The slides
 
 1. **Title.** The words rise in, and the colour strip wipes down the right edge.
-2. **We get hooked on the nitty gritty.** Common data science and AI jargon (fine-tuning, feature extraction, embeddings and so on) drifts around the headline. Click once: it scatters and the second line lands.
+2. **We get hooked on the technical details.** Common data science and AI jargon (fine-tuning, feature extraction, embeddings and so on) drifts around the headline. Click once: it scatters and the second line lands.
 3. **LMC01 "Currently".** Full screen, with a slow push-in.
 4. **LMC07 "Our final workflow".** Pushes in from the right.
 5. **Both.** The workflow shrinks aside and the flowchart slides in next to it. Click to reveal the verdicts.

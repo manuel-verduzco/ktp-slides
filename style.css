@@ -97,7 +97,7 @@ h1, p, figure { margin: 0; }
 @keyframes riseIn { from { opacity: 0; transform: translateY(48px); } }
 @keyframes wipeDown { from { transform: scaleY(0); } }
 
-/* ---------- 2. Nitty gritty ---------- */
+/* ---------- 2. Technical details ---------- */
 .s-hooked { background: var(--accent); color: var(--on-accent); }
 .s-hooked .copy { position: absolute; left: 120px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 48px; z-index: 2; }
 .s-hooked h1 { font-size: 130px; line-height: 134px; font-weight: 700; letter-spacing: -.02em; }
@@ -111,23 +111,14 @@ h1, p, figure { margin: 0; }
   animation: drift var(--d, 9s) ease-in-out infinite; animation-delay: var(--delay, 0s);
 }
 .s-hooked.active .chip { animation: chipIn 1s var(--ease-out) var(--in, .6s) both; }
+/* click: a wave sweeps the pills off to the right, left ones first, while the subtitle is wiped in left to right */
+.s-hooked.step-1 .chip { animation: wave 1.4s cubic-bezier(.55, .05, .85, .45) var(--wd, 0s) both; }
+@keyframes wave { 0% { opacity: 1; } 70% { opacity: 1; } 100% { transform: translate(var(--px, 1900px), var(--py, 0px)); opacity: 0; } }
 @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(var(--dx, 26px), var(--dy, -18px)); } }
 @keyframes chipIn { from { opacity: 0; transform: scale(.6); } }
-/* 2 -> 3 "split": the floating words are pushed off to the sides, then the next slide fades in */
-.in-split-f { animation: splitIn .7s var(--ease-io) .45s both !important; }
-.out-split-f { animation: none !important; }
-.s-hooked.out-split-f .chip { animation: chipPush .9s var(--ease-io) both; }
-.s-hooked.out-split-f .copy { animation: copyOut .6s var(--ease-io) both; }
-.out-split-b { animation: fadeOut .6s var(--ease-io) both !important; }
-.in-split-b { animation: none !important; }
-.s-hooked.in-split-b .chip { animation: chipPull .9s var(--ease-out) .2s both; }
-.s-hooked.in-split-b .copy { animation: copyIn .6s var(--ease-out) .5s both; }
-@keyframes splitIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes chipPush { to { transform: translateX(var(--px, 1900px)) rotate(calc(var(--px) / 120)); opacity: 0; } }
-@keyframes chipPull { from { transform: translateX(var(--px, 1900px)); opacity: 0; } }
-@keyframes copyOut { to { opacity: 0; transform: scale(.96); } }
-@keyframes copyIn { from { opacity: 0; transform: scale(.96); } }
-/* the stand-alone .show-1 on this slide is the subtitle; hide the chips' final state in print */
+/* the subtitle is wiped in from the left, in step with the wave */
+.s-hooked .sub.show-1 { opacity: 1; transform: none; clip-path: inset(-10px 100% -10px -10px); transition: clip-path 1.9s cubic-bezier(.45, .05, .35, 1) .15s; }
+.s-hooked.step-1 .sub.show-1 { clip-path: inset(-10px -10px -10px -10px); }
 
 /* ---------- 3 and 4. Full-screen example slides ---------- */
 .s-full { background: #fff; }
@@ -189,6 +180,7 @@ body.idle #hint { opacity: 0; }
   .slide * { animation: none !important; }
   .slide .show-1, .slide .show-2 { opacity: 1 !important; transform: none !important; }
   .chip { display: none; }
+  .s-hooked .sub.show-1 { clip-path: none !important; }
   #notes, #hint { display: none; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

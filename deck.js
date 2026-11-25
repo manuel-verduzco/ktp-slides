@@ -49,7 +49,7 @@
       timer = window.setTimeout(function () {
         from.classList.remove('active');
         clean();
-      }, type === 'split' ? 1300 : 850);
+      }, 850);
     }
     updateUi();
   }
