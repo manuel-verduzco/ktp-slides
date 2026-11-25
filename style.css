@@ -99,7 +99,7 @@ h1, p, figure { margin: 0; }
 
 /* ---------- 2. Technical details ---------- */
 .s-hooked { background: var(--accent); color: var(--on-accent); }
-.s-hooked .copy { position: absolute; left: 120px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 48px; z-index: 2; }
+.s-hooked .copy { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 48px; z-index: 2; }
 .s-hooked h1 { font-size: 130px; line-height: 134px; font-weight: 700; letter-spacing: -.02em; }
 .s-hooked .sub { font-size: 48px; line-height: 60px; color: var(--tint); max-width: 1300px; }
 .s-hooked.active h1 { animation: riseIn 1s var(--ease-out) .2s both; }
