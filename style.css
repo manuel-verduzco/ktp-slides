@@ -121,36 +121,43 @@ h1, p, figure { margin: 0; }
 .s-hooked.step-1 .sub.show-1 { clip-path: inset(-10px -10px -10px -10px); }
 
 /* ---------- 3 and 4. Full-screen example slides ---------- */
-.s-full { background: #fff; }
-.s-full img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.s-full .tag { position: absolute; left: 48px; margin: 0; z-index: 2; }
-.s-full .tag.top { top: 40px; } .s-full .tag.bottom { bottom: 40px; }
-.s-currently.active img { animation: kenIn 1.6s ease-out both; }
-.s-final.active img { animation: kenIn 1.6s ease-out both; }
-.s-full.active .tag { animation: tagIn .8s var(--ease-out) .9s both; }
+.s-full { background: var(--tint); }
+.s-full .ex-title { position: absolute; left: 160px; top: 40px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; }
+.s-full img { position: absolute; left: 160px; top: 140px; width: 1600px; height: 900px; object-fit: cover; display: block; box-shadow: 0 0 0 6px var(--rule); background: #fff; }
+.s-currently.active img, .s-final.active img { animation: kenIn 1.6s ease-out both; }
+.s-full.active .ex-title { animation: tagIn .8s var(--ease-out) .3s both; }
 @keyframes kenIn { from { transform: scale(1.05); } }
 @keyframes tagIn { from { opacity: 0; transform: translateY(-24px); } }
-.s-final .tag.bottom { animation-name: tagInUp; }
-@keyframes tagInUp { from { opacity: 0; transform: translateY(24px); } }
 
 /* ---------- 5. Both: the workflow shrinks aside, the flowchart joins it ---------- */
 .s-both { background: var(--tint); }
 .s-both .pic { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; box-shadow: 0 0 0 6px var(--rule); background: #fff; }
 .s-both .pic img { width: 100%; height: 100%; display: block; object-fit: cover; }
-.s-both .pL { transform: translate(30px, 288px) scale(.47917); }
-.s-both .pR { transform: translate(970px, 288px) scale(.47917); z-index: 2; }
+.s-both .pL { transform: translate(30px, 202px) scale(.47917); }
+.s-both .pR { transform: translate(970px, 202px) scale(.47917); z-index: 2; }
 .s-both.active .pR { animation: rShrink 1.4s var(--ease-io) .5s both; }
 .s-both.active .pL { animation: lIn 1.2s var(--ease-out) 1.05s both; }
-@keyframes rShrink { from { transform: translate(0, 0) scale(1); box-shadow: none; } }
-@keyframes lIn { from { transform: translate(-1000px, 288px) scale(.47917); opacity: 0; } }
-.s-both .verdict { position: absolute; top: 204px; z-index: 3; }
+/* picture 4 sits in the framed spot of slide 4, then shrinks into the right-hand slot */
+@keyframes rShrink { from { transform: translate(160px, 140px) scale(.83333); } }
+@keyframes lIn { from { transform: translate(-1000px, 202px) scale(.47917); opacity: 0; } }
+.s-both .credit { position: absolute; top: 120px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; z-index: 3; white-space: nowrap; }
+.s-both .cL { left: 30px; } .s-both .cR { left: 970px; transform-origin: 0 0; }
+.s-both .verdict { position: absolute; top: 835px; z-index: 3; }
 .s-both .vL { left: 30px; } .s-both .vR { left: 970px; }
-/* verdict pills and credits arrive with their picture, during the transition */
-.s-both.active .vR, .s-both.active .cR { animation: tagIn .9s var(--ease-out) 1.5s both; }
+.s-both .points { position: absolute; top: 743px; margin: 0; padding: 0; list-style: none; z-index: 3; font-size: 40px; line-height: 54px; color: var(--ink); }
+.s-both .points li { position: relative; padding-left: 42px; }
+.s-both .points li::before { content: ""; position: absolute; left: 4px; top: 19px; width: 16px; height: 16px; border-radius: 50%; }
+.s-both .bad li::before { background: var(--alert); } .s-both .good li::before { background: var(--accent); }
+.s-both .pL2 { left: 30px; } .s-both .pR2 { left: 970px; }
+.s-both.active .pL2 { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
+.s-both.active .pR2 { animation: tagInUp .9s var(--ease-out) 1.7s both; }
+/* the right title travels from its slide-4 position; the right pill follows the shrink */
+.s-both.active .cR { animation: cRMove 1.4s var(--ease-io) .5s both; }
+@keyframes cRMove { from { transform: translate(-810px, -80px); } }
+.s-both.active .vR { animation: tagInUp .9s var(--ease-out) 1.5s both; }
 .s-both.active .vL, .s-both.active .cL { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
+@keyframes tagInUp { from { opacity: 0; transform: translateY(24px); } }
 @keyframes lTagIn { from { transform: translateX(-1000px); opacity: 0; } }
-.s-both .credit { position: absolute; top: 829px; font-size: 28px; line-height: 40px; color: var(--muted); z-index: 3; }
-.s-both .cL { left: 30px; } .s-both .cR { left: 970px; }
 
 /* ---------- notes + hint ---------- */
 #notes {

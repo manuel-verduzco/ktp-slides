@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Simple is better</title>
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 <div id="stage">
@@ -55,14 +55,14 @@
     <section class="slide s-full s-currently" data-transition="fade"
       data-notes="My LMC01 Currently flowchart, full screen, no words added. Say nothing for five seconds, then ask: what do you notice first? It is correct, but it is mostly text: boxes, notes, a loop and a footnote.">
       <img src="assets/img/lmc01-currently.jpg?v=2" alt="A flowchart with many boxes, notes and a loop">
-      <span class="tag amber top">An example from my own LMC01 &middot; Aug 2024</span>
+      <h2 class="ex-title tag red">Example 1</h2>
     </section>
 
     <!-- 4. LMC07 "Our final workflow": pushes in from the right -->
     <section class="slide s-full s-final" data-transition="push"
       data-notes="My LMC07 Our final workflow, full screen, no words added. Same process, more than two years later. What changed? The diagram figures are technical, but they explain the purpose of each step at a glance.">
       <img src="assets/img/lmc07-final-workflow.jpg?v=2" alt="A nine-step workflow in one picture">
-      <span class="tag amber bottom">An example from my own LMC07 &middot; Nov 2026</span>
+      <h2 class="ex-title tag green">Example 2</h2>
     </section>
 
     <!-- 5. Both: the workflow shrinks aside, the flowchart slides in, click reveals the verdicts -->
@@ -70,10 +70,20 @@
       data-notes="The transition: the workflow shrinks to the right and the Currently flowchart slides in beside it, each with its verdict and credit arriving as it lands. Same process, more than two years apart. Left, all text; right, diagram figures that show the purpose of each step.">
       <div class="pic pL"><img src="assets/img/lmc01-currently.jpg?v=2" alt="The flowchart with many boxes, notes and a loop"></div>
       <div class="pic pR"><img src="assets/img/lmc07-final-workflow.jpg?v=2" alt="The nine-step workflow in one picture"></div>
-      <span class="tag red verdict vL">Too much text</span>
-      <span class="tag green verdict vR">Speaks for itself</span>
-      <p class="credit cL">My own LMC01 &middot; Aug 2024</p>
-      <p class="credit cR">My own LMC07 &middot; Nov 2026</p>
+      <ul class="points pL2 bad">
+        <li>Too much text</li>
+        <li>Not simplified</li>
+        <li>Hard to follow</li>
+        <li>Needs explaining</li>
+      </ul>
+      <ul class="points pR2 good">
+        <li>Speaks for itself</li>
+        <li>Structured</li>
+        <li>Colour labels</li>
+        <li>Needs no explaining</li>
+      </ul>
+      <span class="tag red credit cL">Example 1</span>
+      <span class="tag green credit cR">Example 2</span>
     </section>
 
   </main>
