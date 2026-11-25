@@ -145,8 +145,10 @@ h1, p, figure { margin: 0; }
 @keyframes lIn { from { transform: translate(-1000px, 288px) scale(.47917); opacity: 0; } }
 .s-both .verdict { position: absolute; top: 204px; z-index: 3; }
 .s-both .vL { left: 30px; } .s-both .vR { left: 970px; }
-.s-both .vL.show-1, .s-both .vR.show-1 { transform: scale(.6); transform-origin: left center; }
-.s-both.step-1 .vL.show-1, .s-both.step-1 .vR.show-1 { transform: none; }
+/* verdict pills and credits arrive with their picture, during the transition */
+.s-both.active .vR, .s-both.active .cR { animation: tagIn .9s var(--ease-out) 1.5s both; }
+.s-both.active .vL, .s-both.active .cL { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
+@keyframes lTagIn { from { transform: translateX(-1000px); opacity: 0; } }
 .s-both .credit { position: absolute; top: 829px; font-size: 28px; line-height: 40px; color: var(--muted); z-index: 3; }
 .s-both .cL { left: 30px; } .s-both .cR { left: 970px; }
 
