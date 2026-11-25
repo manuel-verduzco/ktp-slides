@@ -111,9 +111,22 @@ h1, p, figure { margin: 0; }
   animation: drift var(--d, 9s) ease-in-out infinite; animation-delay: var(--delay, 0s);
 }
 .s-hooked.active .chip { animation: chipIn 1s var(--ease-out) var(--in, .6s) both; }
-.s-hooked.step-1 .chip { opacity: 0 !important; transform: translate(var(--ox, 200px), var(--oy, -120px)) scale(.7); filter: blur(6px); }
 @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(var(--dx, 26px), var(--dy, -18px)); } }
 @keyframes chipIn { from { opacity: 0; transform: scale(.6); } }
+/* 2 -> 3 "split": the floating words are pushed off to the sides, then the next slide fades in */
+.in-split-f { animation: splitIn .7s var(--ease-io) .45s both !important; }
+.out-split-f { animation: none !important; }
+.s-hooked.out-split-f .chip { animation: chipPush .9s var(--ease-io) both; }
+.s-hooked.out-split-f .copy { animation: copyOut .6s var(--ease-io) both; }
+.out-split-b { animation: fadeOut .6s var(--ease-io) both !important; }
+.in-split-b { animation: none !important; }
+.s-hooked.in-split-b .chip { animation: chipPull .9s var(--ease-out) .2s both; }
+.s-hooked.in-split-b .copy { animation: copyIn .6s var(--ease-out) .5s both; }
+@keyframes splitIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes chipPush { to { transform: translateX(var(--px, 1900px)) rotate(calc(var(--px) / 120)); opacity: 0; } }
+@keyframes chipPull { from { transform: translateX(var(--px, 1900px)); opacity: 0; } }
+@keyframes copyOut { to { opacity: 0; transform: scale(.96); } }
+@keyframes copyIn { from { opacity: 0; transform: scale(.96); } }
 /* the stand-alone .show-1 on this slide is the subtitle; hide the chips' final state in print */
 
 /* ---------- 3 and 4. Full-screen example slides ---------- */
