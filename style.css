@@ -120,6 +120,39 @@ h1, p, figure { margin: 0; }
 .s-hooked .sub.show-1 { opacity: 1; transform: none; clip-path: inset(-10px 100% -10px -10px); transition: clip-path 1.9s cubic-bezier(.45, .05, .35, 1) .15s; }
 .s-hooked.step-1 .sub.show-1 { clip-path: inset(-10px -10px -10px -10px); }
 
+/* ---------- 6. Lead with your results (exploratory) ---------- */
+.s-order { background: var(--surface); color: var(--ink); }
+.s-order h2 { position: absolute; left: 120px; top: 206px; margin: 0; font-size: 84px; line-height: 96px; font-weight: 700; letter-spacing: -.02em; }
+.s-order .lab { position: absolute; left: 120px; margin: 0; }
+.s-order .labTop { top: 446px; } .s-order .labBot { top: 682px; opacity: 0; transition: opacity .6s var(--ease-out); }
+.s-order.step-1 .labBot { opacity: 1; }
+.s-order .box {
+  position: absolute; width: 520px; height: 130px; padding: 0 14px; box-sizing: border-box;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  border-radius: 28px; background: #fff; border: 3px solid var(--rule);
+}
+.s-order .box .w { font-size: 60px; line-height: 64px; font-weight: 700; letter-spacing: -.01em; }
+/* speech-bubble tail */
+.s-order .box::after { content: ""; position: absolute; left: 56px; bottom: -13px; width: 22px; height: 22px; background: inherit; border: inherit; border-top: 0; border-left: 0; border-radius: 0 0 6px 0; transform: rotate(45deg); }
+.s-order .top { top: 508px; }
+.s-order .bot { top: 744px; opacity: 0; transition: opacity .5s var(--ease-out); }
+.s-order .bot.rec { background: var(--accent); border-color: var(--accent); color: var(--on-accent); z-index: 2; transition: opacity .5s var(--ease-out), transform 1.2s var(--ease-io) .9s; }
+.s-order.step-1 .bot { opacity: 1; }
+/* click: the second row appears under the first, then Results is dragged to the front and eats Gather and Build */
+.s-order.step-1 .bot.rec { transform: translateX(var(--dx, 0px)); }
+.s-order.step-1 .bB { animation: eatB 1.7s linear both; }
+.s-order.step-1 .bG { animation: eatG 2.15s linear both; }
+@keyframes eatB { 0% { opacity: 0; transform: none; } 29% { opacity: 1; transform: none; } 76% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(.5); } }
+@keyframes eatG { 0% { opacity: 0; transform: none; } 23% { opacity: 1; transform: none; } 81% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(.5); } }
+.s-order .plain { position: absolute; left: 1860px; top: 744px; width: 1100px; height: 130px; display: flex; align-items: center; margin: 0; font-size: 32px; line-height: 40px; color: var(--ink); opacity: 0; transition: opacity .5s var(--ease-out) .9s, transform 1.2s var(--ease-io) .9s; }
+.s-order .plain ul { margin: 0; padding: 0; list-style: none; }
+.s-order .plain li { position: relative; padding-left: 38px; }
+.s-order .plain li + li { margin-top: 12px; }
+.s-order .plain li::before { content: ""; position: absolute; left: 4px; top: 13px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+.s-order.step-1 .plain { opacity: 1; transform: translateX(-1160px); }
+.s-order.active h2 { animation: riseIn 1s var(--ease-out) .2s both; }
+.s-order.active .top { animation: riseIn .8s var(--ease-out) .5s both; }
+
 /* ---------- 3 and 4. Full-screen example slides ---------- */
 .s-full { background: var(--tint); }
 .s-full .ex-title { position: absolute; left: 160px; top: 40px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; }
@@ -133,27 +166,27 @@ h1, p, figure { margin: 0; }
 .s-both { background: var(--tint); }
 .s-both .pic { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; box-shadow: 0 0 0 6px var(--rule); background: #fff; }
 .s-both .pic img { width: 100%; height: 100%; display: block; object-fit: cover; }
-.s-both .pL { transform: translate(30px, 202px) scale(.47917); }
-.s-both .pR { transform: translate(970px, 202px) scale(.47917); z-index: 2; }
+.s-both .pL { transform: translate(90px, 252px) scale(.4375); }
+.s-both .pR { transform: translate(990px, 252px) scale(.4375); z-index: 2; }
 .s-both.active .pR { animation: rShrink 1.4s var(--ease-io) .5s both; }
 .s-both.active .pL { animation: lIn 1.2s var(--ease-out) 1.05s both; }
 /* picture 4 sits in the framed spot of slide 4, then shrinks into the right-hand slot */
 @keyframes rShrink { from { transform: translate(160px, 140px) scale(.83333); } }
-@keyframes lIn { from { transform: translate(-1000px, 202px) scale(.47917); opacity: 0; } }
-.s-both .credit { position: absolute; top: 120px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; z-index: 3; white-space: nowrap; }
-.s-both .cL { left: 30px; } .s-both .cR { left: 970px; transform-origin: 0 0; }
+@keyframes lIn { from { transform: translate(-1000px, 252px) scale(.4375); opacity: 0; } }
+.s-both .credit { position: absolute; top: 170px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; z-index: 3; white-space: nowrap; }
+.s-both .cL { left: 90px; } .s-both .cR { left: 990px; transform-origin: 0 0; }
 .s-both .verdict { position: absolute; top: 835px; z-index: 3; }
 .s-both .vL { left: 30px; } .s-both .vR { left: 970px; }
-.s-both .points { position: absolute; top: 743px; margin: 0; padding: 0; list-style: none; z-index: 3; font-size: 40px; line-height: 54px; color: var(--ink); }
+.s-both .points { position: absolute; top: 748px; margin: 0; padding: 0; list-style: none; z-index: 3; font-size: 40px; line-height: 54px; color: var(--ink); }
 .s-both .points li { position: relative; padding-left: 42px; }
 .s-both .points li::before { content: ""; position: absolute; left: 4px; top: 19px; width: 16px; height: 16px; border-radius: 50%; }
 .s-both .bad li::before { background: var(--alert); } .s-both .good li::before { background: var(--accent); }
-.s-both .pL2 { left: 30px; } .s-both .pR2 { left: 970px; }
+.s-both .pL2 { left: 90px; } .s-both .pR2 { left: 990px; }
 .s-both.active .pL2 { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
 .s-both.active .pR2 { animation: tagInUp .9s var(--ease-out) 1.7s both; }
 /* the right title travels from its slide-4 position; the right pill follows the shrink */
 .s-both.active .cR { animation: cRMove 1.4s var(--ease-io) .5s both; }
-@keyframes cRMove { from { transform: translate(-810px, -80px); } }
+@keyframes cRMove { from { transform: translate(-830px, -130px); } }
 .s-both.active .vR { animation: tagInUp .9s var(--ease-out) 1.5s both; }
 .s-both.active .vL, .s-both.active .cL { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
 @keyframes tagInUp { from { opacity: 0; transform: translateY(24px); } }
@@ -190,6 +223,10 @@ body.idle #hint { opacity: 0; }
   .slide .show-1, .slide .show-2 { opacity: 1 !important; transform: none !important; }
   .chip { display: none; }
   .s-hooked .sub.show-1 { clip-path: none !important; }
+  .s-order .labBot, .s-order .plain, .s-order .bot.rec { opacity: 1 !important; }
+  .s-order .bot.rec { transform: translateX(var(--dx, 0px)) !important; }
+  .s-order .plain { transform: translateX(-1160px) !important; }
+  .s-order .bB, .s-order .bG { opacity: 0 !important; }
   #notes, #hint { display: none; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

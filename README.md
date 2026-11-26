@@ -21,6 +21,7 @@ The URL hash follows the slide (`index.html#3`), so a refresh keeps your place.
 3. **LMC01 "Currently".** Full screen, with a slow push-in.
 4. **LMC07 "Our final workflow".** Pushes in from the right.
 5. **Both.** The workflow shrinks aside and the flowchart slides in next to it. Click to reveal the verdicts.
+6. **It's your project. Lead with your results.** (exploratory) Gather, Build and Results in a row. Click: Results grows and swallows the other two, then two bullets: have extra slides prepared for the details in case you get asked, and you can always expand inside your Executive Summaries.
 
 ## Moving things around
 
