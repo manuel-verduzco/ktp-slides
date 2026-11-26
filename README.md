@@ -22,6 +22,7 @@ The URL hash follows the slide (`index.html#3`), so a refresh keeps your place.
 4. **LMC07 "Our final workflow".** Pushes in from the right.
 5. **Both.** The workflow shrinks aside and the flowchart slides in next to it. Click to reveal the verdicts.
 6. **It's your project. Lead with your results.** (exploratory) Gather, Build and Results in a row. Click: Results grows and swallows the other two, then two bullets: have extra slides prepared for the details in case you get asked, and you can always expand inside your Executive Summaries.
+7. **Say it in plain words.** (exploratory) Five jargon terms in white bubbles. First click: green plain-language versions slide out of the first three (Fine-tuning, Overfitting, False positive), top to bottom. Second click: the last two (NSN, NCAGE, from your own role) get theirs. Hold the second click to use them as live examples first.
 
 ## Moving things around
 
@@ -37,5 +38,7 @@ In the browser, print the page (Ctrl+P), choose "Save as PDF", set margins to No
 
 ## Assets
 
-- `assets/img/` holds two slides exported from your own LMC01 and LMC07 decks. Both were checked for money values, names and email addresses before being included, and the internal system name (CSIS) was masked.
+- `assets/img/` holds slides exported from your own LMC01, LMC03 and LMC07 decks. They were checked for money values, names and email addresses before being included, and the internal system name (CSIS) was masked on those two. The scraper-tool slide (slide 9) is the original with the CSIS name and the MELCOM logo blurred; it still shows a wage figure.
 - `assets/fonts/` holds DM Sans (SIL Open Font License, licence text included).
+8. **Plain words: 3000x.** (exploratory) Your LMC03 "3000x faster" slide, full frame, with a green "Plain words" pill.
+9. **Plain words: Tool, Purpose, Impact.** (exploratory) Your LMC07 scraper-tool slide, as originally presented (CSIS name and MELCOM logo blurred; the wage figure is left visible).

@@ -157,7 +157,7 @@ h1, p, figure { margin: 0; }
 .s-full { background: var(--tint); }
 .s-full .ex-title { position: absolute; left: 160px; top: 40px; margin: 0; font-size: 34px; line-height: 44px; padding: 12px 32px; }
 .s-full img { position: absolute; left: 160px; top: 140px; width: 1600px; height: 900px; object-fit: cover; display: block; box-shadow: 0 0 0 6px var(--rule); background: #fff; }
-.s-currently.active img, .s-final.active img { animation: kenIn 1.6s ease-out both; }
+.s-currently.active img, .s-final.active img, .s-good.active img { animation: kenIn 1.6s ease-out both; }
 .s-full.active .ex-title { animation: tagIn .8s var(--ease-out) .3s both; }
 @keyframes kenIn { from { transform: scale(1.05); } }
 @keyframes tagIn { from { opacity: 0; transform: translateY(-24px); } }
@@ -191,6 +191,25 @@ h1, p, figure { margin: 0; }
 .s-both.active .vL, .s-both.active .cL { animation: lTagIn 1.2s var(--ease-out) 1.05s both; }
 @keyframes tagInUp { from { opacity: 0; transform: translateY(24px); } }
 @keyframes lTagIn { from { transform: translateX(-1000px); opacity: 0; } }
+
+/* ---------- 7. Say it in plain words (exploratory) ---------- */
+.s-plain { background: var(--surface); color: var(--ink); }
+.s-plain h2 { position: absolute; left: 120px; top: 139px; margin: 0; font-size: 84px; line-height: 96px; font-weight: 700; letter-spacing: -.02em; }
+.s-plain .lab { position: absolute; top: 275px; margin: 0; }
+.s-plain .labJ { left: 120px; } .s-plain .labP { left: 740px; opacity: 0; transition: opacity .6s var(--ease-out) .4s; }
+.s-plain .jar, .s-plain .pl { position: absolute; height: 104px; box-sizing: border-box; border-radius: 28px; display: flex; align-items: center; padding: 0 44px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; }
+.s-plain .jar { left: 120px; width: 560px; font-size: 46px; background: #fff; border: 3px solid var(--rule); }
+.s-plain .jar::after { content: ""; position: absolute; left: 56px; bottom: -13px; width: 22px; height: 22px; background: inherit; border: inherit; border-top: 0; border-left: 0; border-radius: 0 0 6px 0; transform: rotate(45deg); }
+.s-plain .arr { position: absolute; left: 680px; width: 60px; height: 104px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--muted); opacity: 0; transition: opacity .4s var(--ease-out); transition-delay: calc(var(--i, 0) * .35s + .5s); }
+.s-plain .pl { left: 740px; width: 1060px; font-size: 40px; background: var(--accent); border: 3px solid var(--accent); color: var(--on-accent); clip-path: inset(-20px 100% -20px -20px); transform: translateX(-70px); transition: clip-path 1s var(--ease-io), transform 1s var(--ease-io); transition-delay: calc(var(--i, 0) * .35s); }
+.s-plain .pl::after { content: ""; position: absolute; left: 56px; bottom: -13px; width: 22px; height: 22px; background: inherit; border: inherit; border-top: 0; border-left: 0; border-radius: 0 0 6px 0; transform: rotate(45deg); }
+.s-plain .pl.wrap { white-space: normal; font-size: 34px; line-height: 40px; }
+.s-plain.step-1 .labP, .s-plain.step-1 .arr:not(.later) { opacity: 1; }
+.s-plain.step-1 .pl:not(.later) { clip-path: inset(-20px -20px -20px -20px); transform: none; }
+.s-plain.step-2 .arr.later { opacity: 1; }
+.s-plain.step-2 .pl.later { clip-path: inset(-20px -20px -20px -20px); transform: none; }
+.s-plain.active h2 { animation: riseIn 1s var(--ease-out) .2s both; }
+.s-plain.active .jar { animation: riseIn .8s var(--ease-out) calc(.5s + var(--i, 0) * .12s) both; }
 
 /* ---------- notes + hint ---------- */
 #notes {
@@ -227,6 +246,8 @@ body.idle #hint { opacity: 0; }
   .s-order .bot.rec { transform: translateX(var(--dx, 0px)) !important; }
   .s-order .plain { transform: translateX(-1160px) !important; }
   .s-order .bB, .s-order .bG { opacity: 0 !important; }
+  .s-plain .labP, .s-plain .arr { opacity: 1 !important; }
+  .s-plain .pl { clip-path: none !important; transform: none !important; }
   #notes, #hint { display: none; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
