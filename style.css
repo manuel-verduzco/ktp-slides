@@ -213,6 +213,39 @@ h1, p, figure { margin: 0; }
 .s-plain.active h2 { animation: riseIn 1s var(--ease-out) .2s both; }
 .s-plain.active .jar { animation: riseIn .8s var(--ease-out) calc(.5s + var(--i, 0) * .12s) both; }
 
+/* ---------- 10 to 12. Closing set (draft from the handoff) ---------- */
+.s-close { background: var(--surface); color: var(--ink); }
+.s-close h2 { position: absolute; left: 120px; right: 120px; margin: 0; text-align: center; font-size: 84px; line-height: 96px; font-weight: 700; letter-spacing: -.02em; }
+.s-close.active h2 { animation: riseIn 1s var(--ease-out) .2s both; }
+.s-close .bubble { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 28px; font-weight: 700; letter-spacing: -.01em; border: 3px solid var(--rule); background: #fff; }
+.s-close .bubble::after { content: ""; position: absolute; left: 56px; bottom: -13px; width: 22px; height: 22px; background: inherit; border: inherit; border-top: 0; border-left: 0; border-radius: 0 0 6px 0; transform: rotate(45deg); }
+.s-close .bubble.green { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.s-close1 h2 { top: 210px; font-size: 88px; line-height: 104px; }
+.s-close1 h2 .l2 { display: block; color: var(--accent); }
+.s-close1 .b { top: 590px; width: 500px; height: 200px; font-size: 48px; line-height: 56px; padding: 0 36px; opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+.s-close1 .b1 { left: 150px; } .s-close1 .b2 { left: 710px; } .s-close1 .b3 { left: 1270px; }
+.s-close1.step-1 .b { opacity: 1; transform: none; }
+.s-close1 .b2 { transition-delay: .6s; } .s-close1 .b3 { transition-delay: 1.2s; }
+.s-dummy h2 { top: 470px; }
+.s-dummy .lab { position: absolute; left: 0; right: 0; width: max-content; margin: 0 auto; top: 380px; }
+.s-close2 h2 { top: 120px; }
+.s-close2 .lab { position: absolute; margin: 0; }
+.s-close2 .pic { position: absolute; top: 330px; width: 760px; height: 428px; box-shadow: 0 0 0 6px var(--rule); background: #fff; overflow: hidden; }
+.s-close2 .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.s-close2 .pA { left: 120px; } .s-close2 .pB { left: 1040px; opacity: 0; transform: translateX(60px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.s-close2 .tA { left: 120px; top: 262px; } .s-close2 .tB { left: 1040px; top: 262px; opacity: 0; transition: opacity .6s .2s; }
+.s-close2 .arrow { position: absolute; left: 880px; top: 500px; width: 160px; text-align: center; font-size: 72px; color: var(--muted); opacity: 0; transition: opacity .6s; }
+.s-close2 .cap { position: absolute; left: 120px; right: 120px; top: 840px; margin: 0; text-align: center; font-size: 60px; line-height: 70px; font-weight: 700; color: var(--accent); opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease-out) .4s, transform .8s var(--ease-out) .4s; }
+.s-close2.step-1 .pB, .s-close2.step-1 .tB, .s-close2.step-1 .arrow, .s-close2.step-1 .cap { opacity: 1; transform: none; }
+.s-close3 { background: var(--brand); color: var(--on-brand); }
+.s-close3 .copy { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 56px; }
+.s-close3 h1 { margin: 0; font-size: 160px; line-height: 160px; font-weight: 700; letter-spacing: -.02em; }
+.s-close3 .ask { margin: 0; font-size: 56px; line-height: 68px; color: var(--tint); max-width: 1500px; }
+.s-close3 .ask b { color: #fff; }
+.s-close3.active .ask { animation: riseIn 1s var(--ease-out) 1.4s both; }
+.s-close3.active h1 { animation: riseIn 1s var(--ease-out) .2s both; }
+.s-close3 .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 24px; display: flex; }
+
 /* ---------- notes + hint ---------- */
 #notes {
   position: fixed; left: 0; right: 0; bottom: 0; padding: 18px 32px; font: 20px/1.5 var(--font);
@@ -251,6 +284,7 @@ body.idle #hint { opacity: 0; }
   .s-order .bB, .s-order .bG { opacity: 0 !important; }
   .s-plain .labP, .s-plain .arr { opacity: 1 !important; }
   .s-plain .pl { clip-path: none !important; transform: none !important; }
+  .s-close1 .b, .s-close2 .pB, .s-close2 .tB, .s-close2 .arrow, .s-close2 .cap { opacity: 1 !important; transform: none !important; }
   #notes, #hint { display: none; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

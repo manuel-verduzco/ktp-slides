@@ -42,3 +42,11 @@ In the browser, print the page (Ctrl+P), choose "Save as PDF", set margins to No
 - `assets/fonts/` holds DM Sans (SIL Open Font License, licence text included).
 8. **Plain words: 3000x.** (exploratory) Your LMC03 "3000x faster" slide, full frame, with a green "Plain words" pill.
 9. **Plain words: Tool, Purpose, Impact.** (exploratory) Your LMC07 scraper-tool slide, as originally presented (CSIS name and MELCOM logo blurred; the wage figure is left visible).
+10. **Dummy slide: Say what you would do next.** (placeholder) A heading only, standing in for the missing slide on proactivity and ownership. See To do.
+11. **Closing 1: LMC meetings are the perfect place to practise your craft.** (draft) Click: three green bubbles arrive one after another: "Lead with your result", "Say it in plain words", "Say what you would do next".
+12. **Closing 2: Same meeting. Two years apart.** (draft) The LMC01 flowchart ("Then"); click: the LMC07 workflow ("Now") and "Same person. Same meeting. Practice shows."
+13. **Closing 3: Simple is better.** (draft) Dark blue title, then "Next meeting: pick one slide and make it simpler." arrives by itself after about 1.4 seconds, no click.
+
+## To do
+
+- **"Say what you would do next" is not covered yet.** Closing slide 1 (now slide 11) lists it as one of the three habits (lead with your result, say it in plain words, say what you would do next), but no earlier slide shows it. Needs its own slide before the closing set, on proactivity and ownership: bring the next step before anyone asks.
