@@ -35,3 +35,29 @@ The HTML slide deck for the talk "Simple is better": presenting results to the p
 ## If a push fails
 
 An earlier cloud session got a GitHub 403 (`repo_not_connected`). The Claude GitHub app needs to be installed for `manuel-verduzco/ktp-slides` with write access. Tell the user rather than working around it.
+
+## Open decisions
+
+- **Slide 9 shows a wage figure.** The LMC07 "Impact of the project" slide still shows "£280,000 in salaries". The CSIS tool name and the MELCOM logo are blurred in the image. The user chose to leave the figure visible, but the site is public, so raise it again if the deck is going outside the company.
+- **Slide 10 is a dummy.** It carries an amber "Dummy slide" label and is live on the public site until it is replaced.
+
+## Decisions that look odd but are on purpose
+
+- **Slide 7 holds back two answers.** NSN and NCAGE (acronyms from the user's own role) get their plain wording only on a second click. The user wants to use them as live examples first and let the audience guess.
+- **Slides 8 and 9 use the user's own slides** (LMC03 and LMC07) as good examples. Own examples belong on the later slides; the early ones stay generic.
+
+## How to preview
+
+Run a local web server in this folder and open it in a browser:
+
+    python -m http.server 8765
+
+Then open `http://localhost:8765`. Add a changing `?v=` to the URL, and bump the `?v=` on `style.css` in `index.html` after CSS edits, because browsers cache the stylesheet. The `#N` at the end of the URL jumps to slide N.
+
+## The user's habits
+
+- They reject most first drafts and change direction often. Offer a short list of options with a recommendation, then wait.
+- They prefer simple: fewer boxes, fewer words, bigger text. Not every viewer is technical.
+- They give feedback as annotated screenshots. Act on exactly what is circled or crossed out.
+- They test in their own browser before anything is pushed, every time.
+
