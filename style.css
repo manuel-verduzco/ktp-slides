@@ -101,7 +101,7 @@ h1, p, figure { margin: 0; }
 .s-hooked { background: var(--accent); color: var(--on-accent); }
 .s-hooked .copy { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 48px; z-index: 2; }
 .s-hooked h1 { font-size: 130px; line-height: 134px; font-weight: 700; letter-spacing: -.02em; }
-.s-hooked .sub { font-size: 48px; line-height: 60px; color: var(--tint); max-width: 1300px; }
+.s-hooked .sub { font-size: 48px; line-height: 60px; color: var(--tint); max-width: 1600px; }
 .s-hooked.active h1 { animation: riseIn 1s var(--ease-out) .2s both; }
 .chip { position: absolute; z-index: 1; transition: opacity .9s var(--ease-io), transform 1.1s var(--ease-io), filter .9s; }
 .chip i {
@@ -123,6 +123,8 @@ h1, p, figure { margin: 0; }
 /* ---------- 6. Lead with your results (exploratory) ---------- */
 .s-order { background: var(--surface); color: var(--ink); }
 .s-order h2 { position: absolute; left: 120px; top: 206px; margin: 0; font-size: 84px; line-height: 96px; font-weight: 700; letter-spacing: -.02em; }
+.s-order h2 .l2 { display: block; opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.s-order.step-1 h2 .l2 { opacity: 1; transform: none; }
 .s-order .lab { position: absolute; left: 120px; margin: 0; }
 .s-order .labTop { top: 446px; } .s-order .labBot { top: 682px; opacity: 0; transition: opacity .6s var(--ease-out); }
 .s-order.step-1 .labBot { opacity: 1; }
@@ -242,6 +244,7 @@ body.idle #hint { opacity: 0; }
   .slide .show-1, .slide .show-2 { opacity: 1 !important; transform: none !important; }
   .chip { display: none; }
   .s-hooked .sub.show-1 { clip-path: none !important; }
+  .s-order h2 .l2 { opacity: 1 !important; transform: none !important; }
   .s-order .labBot, .s-order .plain, .s-order .bot.rec { opacity: 1 !important; }
   .s-order .bot.rec { transform: translateX(var(--dx, 0px)) !important; }
   .s-order .plain { transform: translateX(-1160px) !important; }
