@@ -6,6 +6,10 @@ This file is loaded at the start of every session. Read `README.md` next: it lis
 
 The HTML slide deck for the talk "Simple is better": presenting results to the people who decide, when part of the audience is not technical. Files: `index.html`, `style.css`, `deck.js`. Dependency-free, 1920x1080 stage, steps via `data-steps` and `.step-N`, CSS-only animations. Live at https://manuel-verduzco.github.io/ktp-slides/ (builds from `main`).
 
+## First step in every session
+
+Cloud sessions can start from an old copy of this repo. Before any work, run `git fetch origin` and base your branch on `origin/main` (for example `git checkout -B draft origin/main`). Check that `git log --oneline -3` shows the latest commit and that `CLAUDE.md` and slides 1 to 13 are in the working folder.
+
 ## Where it stands
 
 - Slides 1 to 9 are built.
@@ -24,12 +28,12 @@ The HTML slide deck for the talk "Simple is better": presenting results to the p
 ## How to work with the user
 
 - Brainstorm each next slide and wait for their pick before building it. They often change direction.
-- Work on a branch called `draft`, never on `main`. Never push to `main` or merge without the user's explicit OK. They check changes before anything goes live.
+- Work on the branch the session gives you (for example `claude/...`) or on `draft`. Never work on `main`, and never push to `main` or merge without the user's explicit OK. They check changes before anything goes live.
 - Keep it simple: fewer boxes, fewer words, bigger text.
 
 ## Not in this repo
 
-- The user's original LMC PDFs (they contain figures and names). If a slide image from them is needed, ask the user to upload it.
+- The user's original LMC PDFs (they contain figures and names). All 219 slides are exported as images in a separate **private** repo, `manuel-verduzco/ktp-slide-bank`: start with its `INDEX.md` and contact sheets. If the session cannot attach it, ask the user to upload the slide image instead. Never copy an image from the bank into this public repo without masking names, the CSIS tool name, the MELCOM logo and money values.
 - Older handoff notes (`HANDOFF.md`, `handoff.zip`) may sit in a local folder; they are not tracked.
 
 ## If a push fails
