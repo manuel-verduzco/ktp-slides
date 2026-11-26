@@ -1,6 +1,6 @@
-# Context for a new session
+# Simple is better: project context
 
-Read this first, then `README.md`.
+This file is loaded at the start of every session. Read `README.md` next: it lists every slide and the keys.
 
 ## What this is
 
@@ -30,7 +30,7 @@ The HTML slide deck for the talk "Simple is better": presenting results to the p
 ## Not in this repo
 
 - The user's original LMC PDFs (they contain figures and names). If a slide image from them is needed, ask the user to upload it.
-- `HANDOFF.md` and `handoff.zip` are older notes from a previous session and are not tracked.
+- Older handoff notes (`HANDOFF.md`, `handoff.zip`) may sit in a local folder; they are not tracked.
 
 ## If a push fails
 
